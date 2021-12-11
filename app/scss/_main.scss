@@ -1,0 +1,233 @@
+.policy {
+   display: flex;
+   background: #f5f5f5;
+   min-height: 100vh;
+   &__aside {
+      position: relative;
+      width: 15%;
+   }
+
+   &__aside-bg-circle {
+      width: 345px;
+      height: 345px;
+      border-radius: 50%;
+      border: 9px solid rgba(45, 100, 244, 0.2);
+      position: absolute;
+      top: -161px;
+      left: -118px;
+   }
+
+   &__aside-bg-small-circles {
+      position: absolute;
+      right: 45%;
+      bottom: 30px;
+   }
+
+   &__aside-title {
+   }
+
+   &__body {
+      position: relative;
+      z-index: 20;
+      width: 85%;
+      padding-left: 8%;
+      padding-right: calc((100vw - 1140px) / 2);
+      background: linear-gradient(50.5deg, rgba(45, 100, 244, 0.4) 31.07%, rgba(143, 174, 255, 0) 64.53%),
+         linear-gradient(153.04deg, rgba(0, 0, 0, 0.5) 55.03%, rgba(0, 0, 0, 0) 83.14%),
+         url("../images/male-rock-climber-climbing-along-a-roof-in-a-cave-2021-08-26-22-40-07-utc 1.png") 0 0 / cover
+            no-repeat;
+      border-radius: 0px 0px 0px 80px;
+   }
+
+   &__main {
+   }
+}
+.aside-title {
+   z-index: 10;
+   color: #e7e7e7;
+   position: absolute;
+   transform: translateY(-50%) rotate(-180deg);
+   writing-mode: vertical-rl;
+   top: 50%;
+   right: 36px;
+   font-weight: bold;
+   font-size: 100px;
+}
+.header {
+   display: flex;
+   align-items: center;
+   &__logo {
+   }
+
+   &__rating {
+      margin-left: 11%;
+   }
+
+   &__lang {
+      margin-right: 30px;
+   }
+   &__rightside {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+   }
+   &__connection {
+      display: flex;
+      align-items: center;
+      color: $white;
+      column-gap: 10px;
+   }
+
+   &__connection-icon {
+      background: $white;
+      border-radius: 0px 0px 0px 20px;
+      width: 43px;
+      height: 36px;
+      font-size: 14px;
+      color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.25s;
+      &:hover {
+         box-shadow: 0px 4px 16px rgba(45, 100, 244, 0.8);
+      }
+   }
+
+   &__connection-text-block {
+   }
+
+   &__connection-title {
+      font-size: 12px;
+      margin-bottom: 3px;
+      font-weight: 300;
+   }
+
+   &__connection-num {
+      font-weight: bold;
+   }
+
+   &__icon-burger {
+   }
+}
+.logo {
+   width: 142px;
+   height: 78px;
+   @extend %imgContain;
+}
+.rating {
+   display: flex;
+   align-items: center;
+   padding: 5px 20px;
+   background: $white;
+   border-radius: 30px;
+   column-gap: 10px;
+   &__logo {
+   }
+
+   &__text-block {
+   }
+
+   &__title {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   &__row {
+      display: flex;
+      align-items: center;
+   }
+
+   &__amount {
+      color: #e7711a;
+      margin-right: 7px;
+      font-size: 14px;
+   }
+
+   &__stars {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+   }
+
+   &__star {
+   }
+}
+.lang {
+   position: relative;
+   &.open {
+      .lang__body {
+         display: block;
+      }
+      .lang__triangle {
+         transform: rotate(90deg);
+      }
+   }
+   &__head {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+   }
+
+   &__flag {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-right: 10px;
+   }
+
+   &__name {
+      color: $white;
+   }
+
+   &__triangle {
+      margin-left: 5px;
+      font-size: 10px;
+      color: $white;
+      transform: rotate(-90deg);
+   }
+
+   &__body {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:not(:last-child) {
+         margin-bottom: 3px;
+      }
+   }
+}
+.icon-burger {
+   margin-left: 40px;
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: $blue;
+   position: relative;
+   &::before,
+   &::after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: $white;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+   }
+   &::before {
+      top: 22px;
+   }
+   &::after {
+      top: 30px;
+   }
+}

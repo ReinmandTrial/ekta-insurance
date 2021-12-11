@@ -1,0 +1,92 @@
+html,
+body {
+	height: 100%;
+	font-family: "Ubuntu";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+	color: $black;
+	overflow-x: hidden;
+}
+textarea {
+	resize: none;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+	position: relative;
+}
+.footer {
+	flex: 0 0 auto;
+}
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0px 15px;
+	height: 100%;
+}
+input,
+textarea {
+	appearance: none;
+	outline: none;
+}
+//Ввод данных конец
+.burger {
+}
+
+.off {
+	display: none !important;
+}
+
+.checkbox {
+	position: relative;
+}
+.checkbox-none,
+.radio-none {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+.checkbox-style {
+	display: block;
+	cursor: pointer;
+}
+.checkbox-none:checked + .checkbox-style {
+}
+.radio-style {
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+.radio-none:checked + .radio-style::before {
+	content: " ";
+}
+
+// popup
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	width: 100%;
+	height: 100vh;
+	&__body {
+		// background: $text1;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.popup-close {
+	}
+}
+// popup end
