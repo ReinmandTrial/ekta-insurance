@@ -1,24 +1,45 @@
 .btn {
-    &:hover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 0px 30px;
+    padding: 16px 13px 16px 28px;
+    width: 100%;
+    min-width: 280px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: 0.1s;
+    .icon {
+        font-size: 15px;
+        transform: rotate(180deg);
     }
-    &:focus {
-    }
-    &:active {
-    }
+
     &-primary {
+        border-color: $blue;
+        background: $blue;
+        color: $white;
         &:hover {
+            box-shadow: 0px 4px 19px rgba(45, 100, 244, 0.5);
         }
     }
     &-secondary {
+        color: $blue;
+        padding-right: 28px;
+        padding-left: 13px;
         &:hover {
+            border-color: $blue;
         }
     }
-    &-contour {
-        &:hover {
+    &-reverse {
+        .icon {
+            transform: unset;
         }
     }
-    &-filter {
-        &:hover {
-        }
+    &:active {
+        color: $white;
+        border-color: #c8acc9;
+        background: #c8acc9;
+        box-shadow: 0px 4px 20px rgba(200, 173, 200, 0.5);
     }
 }
