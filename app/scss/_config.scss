@@ -11,6 +11,9 @@ $gray: #999999;
 }
 .h2 {
    font-size: 40px;
+   @media (max-width: 575.98px) {
+      font-size: 22px;
+   }
 }
 .h3 {
    font-size: 30px;
