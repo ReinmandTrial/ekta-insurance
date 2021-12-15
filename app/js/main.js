@@ -78,6 +78,34 @@ $('.burger__bg,.burger__close,.burger__link').on('click', function () {
 //    // 	},
 //    // }
 // });
+
+var swiper = new Swiper(".swiper-pagin", {
+   spaceBetween: 32,
+   slidesPerView: 'auto',
+   // freeMode: true,
+   watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".banner-slider", {
+   spaceBetween: 10,
+   effect: "fade",
+   loop: true,
+   autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+   },
+   navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+   },
+   thumbs: {
+      swiper: swiper,
+   },
+});
+
+
+
+
+
 $(document).ready(function () {
    $('.hashtag__btn').on('click', function () {
       $(this).closest('.hashtag__body').toggleClass('hashtag__body-open');
@@ -217,53 +245,53 @@ $(document).ready(function () {
          console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
       });
    });
-   $('input[name="daterange2"], .daterangepicker').on('focus', function () {
+   // $('input[name="daterange"], .daterangepicker').on('focus', function () {
 
-      $(this).daterangepicker({
-         opens: 'left',
-         "linkedCalendars": false,
-         "autoApply": true,
-         "parentEl": ".js-calendar",
-         "showCustomRangeLabel": false,
-         "singleDatePicker": true,
-         "locale": {
-            "format": "DD.MM.YYYY",
-            "separator": " до ",
-            "applyLabel": "Apply",
-            "cancelLabel": "Cancel",
-            "fromLabel": "From",
-            "toLabel": "To",
-            "customRangeLabel": "Custom",
-            "weekLabel": "W",
-            "daysOfWeek": [
-               "Пн",
-               "Вт",
-               "Ср",
-               "Чт",
-               "Пт",
-               "Сб",
-               "Нд"
-            ],
-            "monthNames": [
-               "Січень",
-               "Лютий",
-               "Березень",
-               "Квітень",
-               "Травень",
-               "Червень",
-               "Липень",
-               "Серпень",
-               "Вересень",
-               "Жовтень",
-               "Листопад",
-               "Грудень"
-            ],
-            "firstDay": 1
-         },
-      }, function (start, end, label) {
-         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-      });
-   });
+   //    $(this).daterangepicker({
+   //       opens: 'left',
+   //       "linkedCalendars": false,
+   //       "autoApply": true,
+   //       "parentEl": ".js-calendar",
+   //       "showCustomRangeLabel": false,
+   //       "singleDatePicker": true,
+   //       "locale": {
+   //          "format": "DD.MM.YYYY",
+   //          "separator": " до ",
+   //          "applyLabel": "Apply",
+   //          "cancelLabel": "Cancel",
+   //          "fromLabel": "From",
+   //          "toLabel": "To",
+   //          "customRangeLabel": "Custom",
+   //          "weekLabel": "W",
+   //          "daysOfWeek": [
+   //             "Пн",
+   //             "Вт",
+   //             "Ср",
+   //             "Чт",
+   //             "Пт",
+   //             "Сб",
+   //             "Нд"
+   //          ],
+   //          "monthNames": [
+   //             "Січень",
+   //             "Лютий",
+   //             "Березень",
+   //             "Квітень",
+   //             "Травень",
+   //             "Червень",
+   //             "Липень",
+   //             "Серпень",
+   //             "Вересень",
+   //             "Жовтень",
+   //             "Листопад",
+   //             "Грудень"
+   //          ],
+   //          "firstDay": 1
+   //       },
+   //    }, function (start, end, label) {
+   //       console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+   //    });
+   // });
 
    $('.form-policy__promocode-title').on('click', function () {
       $(this).closest('.form-policy__promocode').toggleClass('open');
@@ -288,4 +316,154 @@ $(document).ready(function () {
       $(this).closest('.form-policy').find('.form-policy__step-four').hide();
       $(this).closest('.form-policy').find('.form-policy__step-three').show();
    });
+   $('.form-policy__btn-to-step-four').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-three').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-four').css('display', 'flex');
+   });
+
+   //new JS
+   let items = $('body').find('.select__block');
+   $(items).each(function () {
+      // let width = $(this).find('.select').width() + 2;
+      // let height = $(this).find('.select').height() + 2;
+      // $(this).find('.select__block-shadow').css('width', width);
+      // $(this).find('.select__block-shadow').css('height', height);
+   })
+   $('.select__head').on('click', function () {
+      $(this).closest('.select__block').toggleClass('open');
+   })
+   $('.select__item').on('click', function () {
+      let text = $(this).html();
+      $(this).closest('.select').find('.select__text').html(text);
+      $(this).closest('.select__block').removeClass('open');
+   })
+
+   $('.form-policy__btn-add-tourist').on('click', function () {
+      $('.form-policy__tourist-block').addClass('new');
+      $('.form-policy__header').css('border-bottom', 'none');
+      $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function () {
+         if (!$(this).hasClass('tourist-clone')) {
+            $(this).addClass('ready');
+         }
+      })
+
+
+      $('.tourist-clone').clone().appendTo('.form-policy__tourist-block').removeClass('tourist-clone');
+      $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function (index) {
+         $(this).find('.form-policy__toutist-num').html('Участник ' + index);
+      })
+   })
+   $('.form-policy__tourist-block').on('click', '.form-policy__btn-check', function () {
+      let items = $(this).closest('.form-policy__tourist-block').find('.form-policy__tourist');
+
+      $(items).each(function () {
+         if (!$(this).hasClass('tourist-clone')) {
+            $(this).addClass('ready');
+         }
+      })
+      $(this).closest('.form-policy__tourist').removeClass('ready');
+   })
+
+   $('.js-simple-select').on('click', function () {
+      $(this).toggleClass('open');
+      // $(this).find('.js-simple-select-body').slideToggle(0);
+   })
+
+
+   $(".form-policy-toggle__item").on('click', function () {
+      if (!$(this).hasClass("active")) {//Проверка, если мы не нажимаем на уже нажатую кнопку, то выполняем код:
+         let btns = $(this).closest(".form-policy-toggle").find(".form-policy-toggle__item");// здесь так скажем все кнопки
+         let count;// Здесь будем хранить индекс кнопки 
+         $(btns).each(function () {
+            $(this).removeClass("active");//Делаем все кнопки отжатыми
+         })
+
+         $(this).addClass("active");//делаем нашу кнопку нажатой
+         //ПО особому классу узнаем индекс
+         $(btns).each(function (index) {
+            if ($(this).hasClass("active")) {//Здесь this выступает в качестве обращения в цикле к элементу, который перебираем
+               count = index;//находим порядковый номер
+            }
+         })
+
+         let blocks = $('.form-policy-toggle__body').find('.form-policy-toggle__item-body');// элементы которые нужно будет открывать и закрывать
+
+         $(blocks).each(function (index) {
+            if (index == count) {//Если это нужный нам блок
+               $(this).addClass("active");//ткрываем
+            } else {//иначе
+               $(this).removeClass("active");// скрываем
+            }
+         })
+      }
+
+   })
+   if ($(window).width() < 992) {
+      $('.policy__btn-arrange--mobile').on('click', function () {
+         $('.policy__text').hide();
+         $('.policy__form').show();
+      })
+   }
+
+   $(function () {
+      let items = $('.arrange-slider__items').find('.arrange-slider__item');
+      let click = false;
+      var glowInterval = 2000 // 1000 = 1 sec
+
+      $(items).each(function (index) {
+         if (index == 0) {
+            $(this).addClass('active');
+            $('.arrange-slider__img').find('img').attr('src', $(this).find('img').attr('src'));
+            return;
+         }
+      })
+
+      setInterval(function () {
+         if (click === false) {
+            let pos;
+            //Обработчик кнопок
+            $(items).each(function (index) {
+               if ($(this).hasClass('active')) {
+                  if ($(this).is(':last-child')) {
+                     $(this).removeClass('active');
+                     $(items).each(function () {
+                        if ($(this).is(':first-child')) {
+                           $(this).addClass('active');
+                           pos = 1;
+                        }
+                     })
+                  } else {
+                     $(this).removeClass('active');
+                     $(this).next().addClass('active');
+                     pos = index + 2;
+                     return false;
+                  }
+               }
+            })
+            //Обработчки для картинки
+            $(items).each(function () {
+               if ($(this).hasClass('active')) {
+                  $('.arrange-slider__img').find('img').attr('src', $(this).find('img').attr('src'));
+                  return;
+               }
+            })
+         }
+         click = false;
+      }, glowInterval);
+
+      $('.arrange-slider__item').on('click', function () {
+         $(items).each(function () {
+            $(this).removeClass('active');
+         })
+         $(this).addClass('active');
+
+         $(items).each(function () {
+            if ($(this).hasClass('active')) {
+               $('.arrange-slider__img').find('img').attr('src', $(this).find('img').attr('src'));
+               return;
+            }
+         })
+         click = true;
+      })
+   })
 });

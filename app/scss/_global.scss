@@ -290,7 +290,6 @@ textarea {
 	background-color: #fff;
 	margin-top: 11px;
 	margin-left: -9px;
-	border-radius: 0;
 	height: 280px;
 	border-radius: 30px;
 	border: unset;
@@ -306,6 +305,9 @@ textarea {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.daterangepicker .calendar-table td:hover {
+	border-radius: 50%;
+}
 .daterangepicker td.start-date.end-date {
 	background: #c8acc9;
 	border: 2px solid #406def;
@@ -314,7 +316,7 @@ textarea {
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
 	color: $blue;
-	background: #ffea21;
+	// background: #ffea21;
 }
 .daterangepicker td.weekend.available {
 	color: $black;
@@ -389,27 +391,27 @@ input {
 
 @media (max-width: 575.98px) {
 	.daterangepicker {
-		margin-top: 7px;
+		// margin-top: 7px;
 	}
 	.daterangepicker .drp-calendar.left .calendar-table {
-		padding-top: 5px;
+		// padding-top: 5px;
 	}
 	.daterangepicker .drp-calendar.left .calendar-table table {
-		width: 225px;
+		// width: 225px;
 	}
 	.daterangepicker .drp-calendar.left th.month,
 	.daterangepicker .calendar-table td {
-		font-size: 12px;
-		line-height: 18px;
+		// font-size: 12px;
+		// line-height: 18px;
 		min-width: unset;
 	}
 	.form-policy__input:not(:last-child) {
 		margin-bottom: 18px;
 	}
 	.daterangepicker .calendar-table .prev {
-		left: 50px;
+		// left: 50px;
 	}
 	.daterangepicker .calendar-table .next {
-		right: 50px;
+		// right: 50px;
 	}
 }
