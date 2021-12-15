@@ -1,3 +1,36 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+   anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      const blockID = anchor.getAttribute('href').substr(1)
+
+      document.getElementById(blockID).scrollIntoView({
+         behavior: 'smooth',
+         block: 'start'
+      })
+   })
+}
 // Бургер 
 $('.icon-burger').on('click', function () {
    $('.burger').addClass('open');
@@ -135,4 +168,124 @@ $(document).ready(function () {
          }
       }
    })
+   // Календарь
+
+   $('input[name="daterange"], .daterangepicker').on('focus', function () {
+
+      $(this).daterangepicker({
+         opens: 'center',
+         "linkedCalendars": false,
+         "autoApply": true,
+         "parentEl": ".js-calendar",
+         "showCustomRangeLabel": false,
+         "singleDatePicker": true,
+         "locale": {
+            "format": "DD.MM.YYYY",
+            "separator": " до ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+               "Пн",
+               "Вт",
+               "Ср",
+               "Чт",
+               "Пт",
+               "Сб",
+               "Нд"
+            ],
+            "monthNames": [
+               "Січень",
+               "Лютий",
+               "Березень",
+               "Квітень",
+               "Травень",
+               "Червень",
+               "Липень",
+               "Серпень",
+               "Вересень",
+               "Жовтень",
+               "Листопад",
+               "Грудень"
+            ],
+            "firstDay": 1
+         },
+      }, function (start, end, label) {
+         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      });
+   });
+   $('input[name="daterange2"], .daterangepicker').on('focus', function () {
+
+      $(this).daterangepicker({
+         opens: 'left',
+         "linkedCalendars": false,
+         "autoApply": true,
+         "parentEl": ".js-calendar",
+         "showCustomRangeLabel": false,
+         "singleDatePicker": true,
+         "locale": {
+            "format": "DD.MM.YYYY",
+            "separator": " до ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+               "Пн",
+               "Вт",
+               "Ср",
+               "Чт",
+               "Пт",
+               "Сб",
+               "Нд"
+            ],
+            "monthNames": [
+               "Січень",
+               "Лютий",
+               "Березень",
+               "Квітень",
+               "Травень",
+               "Червень",
+               "Липень",
+               "Серпень",
+               "Вересень",
+               "Жовтень",
+               "Листопад",
+               "Грудень"
+            ],
+            "firstDay": 1
+         },
+      }, function (start, end, label) {
+         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      });
+   });
+
+   $('.form-policy__promocode-title').on('click', function () {
+      $(this).closest('.form-policy__promocode').toggleClass('open');
+   })
+   $('.form-policy__btn-to-step-two').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-one').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-two').show();
+   });
+   $('.form-policy__btn-prev-to-step-one').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-two').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-one').show();
+   });
+   $('.form-policy__btn-to-step-three').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-two').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-three').show();
+   });
+   $('.form-policy__btn-prev-to-step-two').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-three').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-two').show();
+   });
+   $('.form-policy__btn-prev-to-step-three').on('click', function () {
+      $(this).closest('.form-policy').find('.form-policy__step-four').hide();
+      $(this).closest('.form-policy').find('.form-policy__step-three').show();
+   });
 });

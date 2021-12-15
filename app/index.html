@@ -17,7 +17,7 @@
 
 		<!-- MAIN start  -->
 		<main class="main">
-			<div class="policy">
+			<div class="policy" id="top">
 				<aside class="policy__aside">
 					<div class="policy__aside-bg-circle"></div>
 					<div class="policy__aside-bg-small-circles">
@@ -165,7 +165,7 @@
 									<div class="form-policy__input-container">
 										<div class="form-policy__input input__block">
 											<p class="input__title h6">Територія дії полісу</p>
-											<div class="input__box select open">
+											<div class="input__box select">
 												<div class="select__head">
 													<p class="select__text select__text-placeholder">Територія дії полісу</p>
 													<span class="select__icon icon icon-triangle-left"></span>
@@ -273,13 +273,13 @@
 										</div>
 										<div class="form-policy__input input__block">
 											<p class="input__title h6">Вкажіть дату початку дії полісу і дату закінчення</p>
-											<div class="input__flexbox">
-												<div class="input__box js-calendar">
-													<input type="text" class="input" placeholder="Початок">
+											<div class="input__flexbox input__flexbox-from-to js-calendar">
+												<div class="input__box ">
+													<input type="text" name="daterange" class="input" placeholder="Початок">
 													<span class="icon icon-calendar"></span>
 												</div>
-												<div class="input__box js-calendar">
-													<input type="text" class="input" placeholder="Кiнець">
+												<div class="input__box ">
+													<input type="text" name="daterange2" class="input" placeholder="Кiнець">
 													<span class="icon icon-calendar"></span>
 												</div>
 
@@ -331,7 +331,7 @@
 											<div class="form-policy__input input__block">
 												<p class="input__title h6">Введіть прізвище та ім'я латинкою, як у закордонному
 													паспорті </p>
-												<div class="input__flex-box">
+												<div class="input__flexbox">
 													<div class="input__box">
 														<input type="text" class="input" placeholder="Iм'я">
 													</div>
@@ -381,7 +381,7 @@
 									<div class="form-policy__price h3">25 000 USD</div>
 									<div class="form-policy__btns-block">
 										<button type="button"
-											class="form-policy__btn-next form-policy__btn-to-step-one btn btn-secondary btn-reverse">
+											class="form-policy__btn-next form-policy__btn-prev-to-step-one btn btn-secondary btn-reverse">
 											<span class="icon icon-triangle-left"></span>
 											Назад
 										</button>
@@ -460,7 +460,7 @@
 									<div class="form-policy__price h3">25 000 USD</div>
 									<div class="form-policy__btns-block">
 										<button type="button"
-											class="form-policy__btn-next form-policy__btn-to-step-two btn btn-secondary btn-reverse">
+											class="form-policy__btn-next form-policy__btn-prev-to-step-two btn btn-secondary btn-reverse">
 											<span class="icon icon-triangle-left"></span>
 											Назад
 										</button>
@@ -529,7 +529,7 @@
 						</div>
 					</div>
 
-					<script>
+					<!-- 	<script>
 						var swiper = new Swiper(".swiper-pagination", {
 							spaceBetween: 10,
 							slidesPerView: 4,
@@ -546,7 +546,7 @@
 								swiper: swiper,
 							},
 						});
-					</script>
+					</script> -->
 
 
 				</div>
@@ -772,77 +772,6 @@
 				<div class="program__aside-bg-circle"></div>
 			</section>
 
-			<div class="what-to-do">
-				<aside class="what-to-do__aside">
-					<div class="what-to-do__aside-bg-circle"></div>
-					<div class="what-to-do__aside-bg-small-circles">
-						<img src="images/circles.svg" alt="">
-					</div>
-					<p class="what-to-do__aside-title aside-title">Що робити?</p>
-
-				</aside>
-
-				<div class="what-to-do__main">
-					<div class="what-to-do__content">
-						<p class="what-to-do__title h1"><span>Що робити</span> <br>
-							у разі страхового випадку?</p>
-						<div class="what-to-do__body">
-							<div class="card-what-to-do">
-								<div class="card-what-to-do__img">
-									<img src="images/card-what-to-do-img1.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-left">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-right">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<p class="card-what-to-do__title">Зверніться
-									до страхової компанії</p>
-								<p class="card-what-to-do__descr h6">
-									Якщо з вами щось трапилося, одразу зверніться до страхової компанії.
-									Це можна зробити за телефоном гарячої лінії <a href="#" class="card-what-to-do__link">0 800
-										305 122</a> або у месенджері
-								</p>
-							</div>
-							<div class="card-what-to-do">
-								<div class="card-what-to-do__img">
-									<img src="images/card-what-to-do-img2.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-left">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-right">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<p class="card-what-to-do__title">Вкажіть особисті дані</p>
-								<p class="card-what-to-do__descr h6">Номер страхового поліса та ваше точне місце перебування
-								</p>
-							</div>
-							<div class="card-what-to-do">
-								<div class="card-what-to-do__img">
-									<img src="images/card-what-to-do-img3.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-left">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<div class="card-what-to-do__circles card-what-to-do__circles-right">
-									<img src="images/circles.svg" alt="">
-								</div>
-								<p class="card-what-to-do__title">Отримайте допомогу </p>
-								<p class="card-what-to-do__descr h6">Отримайте медичну допомогу та грошову компенсацію</p>
-								<div class="card-what-to-do__bg-bottom">
-									<img src="images/double-circles.svg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="what-to-do__bg">
-						<img src="images/what-to-do--bg.png" alt="">
-					</div>
-				</div>
-			</div>
-
 			<section class="arrange">
 				<div class="arrange__main">
 					<div class="arrange__content">
@@ -1048,6 +977,127 @@
 				</aside>
 			</section>
 
+			<div class="trauma">
+				<div class="trauma__content">
+					<div class="container">
+						<h3 class="h2 trauma__title"><span>Які травми </span>ви можете отримати?</h3>
+						<ul class="trauma__nav">
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma1.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Розтягнення</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma2.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Удари</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma3.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Переломи</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma4.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Пошкодження внутрішніх органів</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma5.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Пошкодження органів слуху та зору</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma6.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Травми м’яких тканин</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma7.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Травми кісток і суглобів</span></span></span></a>
+							</li>
+							<li class="trauma__item"
+								style="background: linear-gradient(49.18deg, rgba(45, 100, 244, 0.2) 1.53%, rgba(45, 100, 244, 0) 128.98%), url(images/trauma8.png) no-repeat; background-size: cover">
+								<a href="#" class="trauma__link"><span class="trauma__border"><span class="trauma__button"><span
+												class="trauma__text">Травми дихальної системи</span></span></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="what-to-do">
+				<aside class="what-to-do__aside">
+					<div class="what-to-do__aside-bg-circle"></div>
+					<div class="what-to-do__aside-bg-small-circles">
+						<img src="images/circles.svg" alt="">
+					</div>
+					<p class="what-to-do__aside-title aside-title">Що робити?</p>
+
+				</aside>
+
+				<div class="what-to-do__main">
+					<div class="what-to-do__content">
+						<p class="what-to-do__title h1"><span>Що робити</span> <br>
+							у разі страхового випадку?</p>
+						<div class="what-to-do__body">
+							<div class="card-what-to-do">
+								<div class="card-what-to-do__img">
+									<img src="images/card-what-to-do-img1.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-left">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-right">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<p class="card-what-to-do__title">Зверніться
+									до страхової компанії</p>
+								<p class="card-what-to-do__descr h6">
+									Якщо з вами щось трапилося, одразу зверніться до страхової компанії.
+									Це можна зробити за телефоном гарячої лінії <a href="#" class="card-what-to-do__link">0 800
+										305 122</a> або у месенджері
+								</p>
+							</div>
+							<div class="card-what-to-do">
+								<div class="card-what-to-do__img">
+									<img src="images/card-what-to-do-img2.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-left">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-right">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<p class="card-what-to-do__title">Вкажіть особисті дані</p>
+								<p class="card-what-to-do__descr h6">Номер страхового поліса та ваше точне місце перебування
+								</p>
+							</div>
+							<div class="card-what-to-do">
+								<div class="card-what-to-do__img">
+									<img src="images/card-what-to-do-img3.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-left">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<div class="card-what-to-do__circles card-what-to-do__circles-right">
+									<img src="images/circles.svg" alt="">
+								</div>
+								<p class="card-what-to-do__title">Отримайте допомогу </p>
+								<p class="card-what-to-do__descr h6">Отримайте медичну допомогу та грошову компенсацію</p>
+								<div class="card-what-to-do__bg-bottom">
+									<img src="images/double-circles.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="what-to-do__bg">
+						<img src="images/what-to-do--bg.png" alt="">
+					</div>
+				</div>
+			</div>
+
 			<section class="hashtag">
 				<div class="container">
 					<h3 class="h1 title"><span>Страхування</span> всіх небезпечних видів спорту </h3>
@@ -1102,6 +1152,283 @@
 					</div>
 				</div>
 			</section>
+
+			<div class="extreme">
+				<div class="extreme__content">
+					<div class="container">
+						<div class="extreme__first">
+							<p class="extreme__title h5">Страхування захищає вас під час змагань, тренувань, туристичних
+								активностей тощо</p>
+							<ul class="extreme__list">
+								<li class="extreme__item">
+									<div class="extreme__item-img"><img src="images/extreme-item1.png" alt=""></div>
+									<p class="extreme__item-title h5">Страхування по всьому світу</p>
+								</li>
+								<li class="extreme__item">
+									<div class="extreme__item-img"><img src="images/extreme-item2.png" alt=""></div>
+									<p class="extreme__item-title h5">Страхування за всіма видами спорту</p>
+								</li>
+								<li class="extreme__item">
+									<div class="extreme__item-img"><img src="images/extreme-item3.png" alt=""></div>
+									<p class="extreme__item-title h5">Страхування екстремалів до 85 років</p>
+								</li>
+								<li class="extreme__item">
+									<div class="extreme__item-img"><img src="images/extreme-item4.png" alt=""></div>
+									<p class="extreme__item-title h5">Підтримка 24/7</p>
+								</li>
+							</ul>
+							<div class="extreme__background--mobile"><img src="images/extremeback--mobile.png" alt=""></div>
+							<div class="extreme__circles--mobile"><img src="images/circles2.svg" alt=""></div>
+						</div>
+						<div class="extreme__second">
+							<h4 class="extreme__main h1"><span>Надійне страхування</span> екстремалів</h4>
+							<p class="extreme__info h5">Ми знаємо, як ви любите екстремальні види спорту та відчуття адреналіну
+								в крові. Втім,<span>ці заняття часто супроводжуються небезпечними травмами,</span>ризиковими не
+								лише для вашого здоров’я, а й для життя.</p>
+							<p class="extreme__info h5">Саме тому <span>ЕКТА підготувала послугу медичного страхування,</span>
+								розроблену спеціально для спортсменів-екстремалів, щоб надати вам якісне лікування та відмінний
+								сервіс у ситуаціях, де немає права на помилку.</p>
+							<button type="button" class="btn btn-primary extreme__button">
+								Оформити поліс
+								<span class="icon icon-triangle-left"></span>
+							</button>
+						</div>
+					</div>
+					<div class="extreme__background"><img src="images/extremeback1.png" alt=""></div>
+					<div class="extreme__background2"><img src="images/extremeback2.png" alt=""></div>
+					<div class="extreme__background3"><img src="images/extremeback3.png" alt=""></div>
+				</div>
+			</div>
+
+			<section class="review">
+				<div class="container">
+					<h3 class="h1 title"><span>Відгуки</span> наших клієнтів</h3>
+					<div class="review__content">
+						<div class="review__slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="review__card">
+										<div class="review__card-header">
+											<div class="review__card-photo">
+												<img src="images/review1.png" alt="">
+											</div>
+											<div class="review__card-descr">
+												<div class="review__card-name">Сергей Куцюба</div>
+												<div class="review__card-date">29.08.2021</div>
+												<div class="review__card-star">
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-blank.svg" alt="">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="review__card-body">
+											<p class="review__card-text">
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
+												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
+												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
+												рынке.
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта
+
+											</p>
+										</div>
+										<img src="images/review__circle.png" alt="" class="review__circle">
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review__card">
+										<div class="review__card-header">
+											<div class="review__card-photo">
+												<img src="images/review1.png" alt="">
+											</div>
+											<div class="review__card-descr">
+												<div class="review__card-name">Сергей Куцюба</div>
+												<div class="review__card-date">29.08.2021</div>
+												<div class="review__card-star">
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-blank.svg" alt="">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="review__card-body">
+											<p class="review__card-text">
+												Я катаюсь на лыжах каждый сезон. Страховку всегда оформляю в ЕКТА.  В компанию
+												обращалась только один раз, когда сильно подвернула ногу. Оператор сразу же ответил.
+												Понравилось, что можно общаться через вайбер. Ребята нашли мне ближайшую больницу,
+												перелома не было, обычный вывих. Все затраты покрыла моя экстремальная
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент.
+											</p>
+										</div>
+										<img src="images/review__circle.png" alt="" class="review__circle">
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review__card">
+										<div class="review__card-header">
+											<div class="review__card-photo">
+												<img src="images/review1.png" alt="">
+											</div>
+											<div class="review__card-descr">
+												<div class="review__card-name">Сергей Шишковский</div>
+												<div class="review__card-date">29.08.2021</div>
+												<div class="review__card-star">
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-blank.svg" alt="">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="review__card-body">
+											<p class="review__card-text">
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
+												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
+												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
+												рынке.
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта
+											</p>
+										</div>
+										<img src="images/review__circle.png" alt="" class="review__circle">
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review__card">
+										<div class="review__card-header">
+											<div class="review__card-photo">
+												<img src="images/review1.png" alt="">
+											</div>
+											<div class="review__card-descr">
+												<div class="review__card-name">Сергей Куцюба</div>
+												<div class="review__card-date">29.08.2021</div>
+												<div class="review__card-star">
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-blank.svg" alt="">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="review__card-body">
+											<p class="review__card-text">
+												Я катаюсь на лыжах каждый сезон. Страховку всегда оформляю в ЕКТА.  В компанию
+												обращалась только один раз, когда сильно подвернула ногу. Оператор сразу же ответил.
+												Понравилось, что можно общаться через вайбер. Ребята нашли мне ближайшую больницу,
+												перелома не было, обычный вывих. Все затраты покрыла моя экстремальная
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент.
+											</p>
+										</div>
+										<img src="images/review__circle.png" alt="" class="review__circle">
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="review__card">
+										<div class="review__card-header">
+											<div class="review__card-photo">
+												<img src="images/review1.png" alt="">
+											</div>
+											<div class="review__card-descr">
+												<div class="review__card-name">Сергей Шишковский</div>
+												<div class="review__card-date">29.08.2021</div>
+												<div class="review__card-star">
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-full.svg" alt="">
+													</span>
+													<span class="review__card-star-item">
+														<img src="images/star-blank.svg" alt="">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="review__card-body">
+											<p class="review__card-text">
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
+												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
+												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
+												рынке.
+												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
+												момент. Перешел по рекламе о страховании экстремального спорта
+											</p>
+										</div>
+										<img src="images/review__circle.png" alt="" class="review__circle">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="review__slider-btn review__slider-btn__next"><span class="icon icon-arrow-right"></span>
+						</div>
+						<div class="review__slider-btn review__slider-btn__prev"><span class="icon icon-arrow-right"></span>
+						</div>
+						<div class="review__pagination"></div>
+					</div>
+				</div>
+				<div class="review__bg">
+					<img src="images/review-background.png" alt="">
+				</div>
+			</section>
+
 			<section class="faq">
 				<div class="container">
 					<h3 class="h1 title"><span>Питання</span> - Відповідь (FAQ)</h3>
@@ -1356,234 +1683,7 @@
 				<img src="images/faq__circle-top-left.png" alt="" class="faq__circle-top-left">
 				<img src="images/faq__circle-bottom-right.png" alt="" class="faq__circle-bottom-right">
 			</section>
-			<section class="review">
-				<div class="container">
-					<h3 class="h1 title"><span>Відгуки</span> наших клієнтів</h3>
-					<div class="review__content">
-						<div class="review__slider">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="review__card">
-										<div class="review__card-header">
-											<div class="review__card-photo">
-												<img src="images/review1.png" alt="">
-											</div>
-											<div class="review__card-descr">
-												<div class="review__card-name">Сергей Куцюба</div>
-												<div class="review__card-date">29.08.2021</div>
-												<div class="review__card-star">
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-blank.svg" alt="">
-													</span>
-												</div>
-											</div>
-										</div>
-										<div class="review__card-body">
-											<p class="review__card-text">
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
-												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
-												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
-												рынке.
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта
 
-											</p>
-										</div>
-										<img src="images/review__circle.png" alt="" class="review__circle">
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="review__card">
-										<div class="review__card-header">
-											<div class="review__card-photo">
-												<img src="images/review1.png" alt="">
-											</div>
-											<div class="review__card-descr">
-												<div class="review__card-name">Сергей Куцюба</div>
-												<div class="review__card-date">29.08.2021</div>
-												<div class="review__card-star">
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-blank.svg" alt="">
-													</span>
-												</div>
-											</div>
-										</div>
-										<div class="review__card-body">
-											<p class="review__card-text">
-												Я катаюсь на лыжах каждый сезон. Страховку всегда оформляю в ЕКТА.  В компанию
-												обращалась только один раз, когда сильно подвернула ногу. Оператор сразу же ответил.
-												Понравилось, что можно общаться через вайбер. Ребята нашли мне ближайшую больницу,
-												перелома не было, обычный вывих. Все затраты покрыла моя экстремальная
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент.
-											</p>
-										</div>
-										<img src="images/review__circle.png" alt="" class="review__circle">
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="review__card">
-										<div class="review__card-header">
-											<div class="review__card-photo">
-												<img src="images/review1.png" alt="">
-											</div>
-											<div class="review__card-descr">
-												<div class="review__card-name">Сергей Шишковский</div>
-												<div class="review__card-date">29.08.2021</div>
-												<div class="review__card-star">
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-blank.svg" alt="">
-													</span>
-												</div>
-											</div>
-										</div>
-										<div class="review__card-body">
-											<p class="review__card-text">
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
-												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
-												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
-												рынке.
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта
-											</p>
-										</div>
-										<img src="images/review__circle.png" alt="" class="review__circle">
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="review__card">
-										<div class="review__card-header">
-											<div class="review__card-photo">
-												<img src="images/review1.png" alt="">
-											</div>
-											<div class="review__card-descr">
-												<div class="review__card-name">Сергей Куцюба</div>
-												<div class="review__card-date">29.08.2021</div>
-												<div class="review__card-star">
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-blank.svg" alt="">
-													</span>
-												</div>
-											</div>
-										</div>
-										<div class="review__card-body">
-											<p class="review__card-text">
-												Я катаюсь на лыжах каждый сезон. Страховку всегда оформляю в ЕКТА.  В компанию
-												обращалась только один раз, когда сильно подвернула ногу. Оператор сразу же ответил.
-												Понравилось, что можно общаться через вайбер. Ребята нашли мне ближайшую больницу,
-												перелома не было, обычный вывих. Все затраты покрыла моя экстремальная
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент.
-											</p>
-										</div>
-										<img src="images/review__circle.png" alt="" class="review__circle">
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="review__card">
-										<div class="review__card-header">
-											<div class="review__card-photo">
-												<img src="images/review1.png" alt="">
-											</div>
-											<div class="review__card-descr">
-												<div class="review__card-name">Сергей Шишковский</div>
-												<div class="review__card-date">29.08.2021</div>
-												<div class="review__card-star">
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-full.svg" alt="">
-													</span>
-													<span class="review__card-star-item">
-														<img src="images/star-blank.svg" alt="">
-													</span>
-												</div>
-											</div>
-										</div>
-										<div class="review__card-body">
-											<p class="review__card-text">
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта, без проблем оформил
-												страховку на двоих человек. Хотел сравнить цену но оказалось, что практически нет
-												страховых компаний, которые страхуют экстремалов. Цена и сервис лучшие, что есть на
-												рынке.
-												Прошлой зимой катались с девушкой на сноуборде, оформили страховку в последний
-												момент. Перешел по рекламе о страховании экстремального спорта
-											</p>
-										</div>
-										<img src="images/review__circle.png" alt="" class="review__circle">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="review__slider-btn review__slider-btn__next"><span class="icon icon-arrow-right"></span>
-						</div>
-						<div class="review__slider-btn review__slider-btn__prev"><span class="icon icon-arrow-right"></span>
-						</div>
-						<div class="review__pagination"></div>
-					</div>
-				</div>
-				<div class="review__bg">
-					<img src="images/review-background.png" alt="">
-				</div>
-			</section>
 
 
 		</main>
@@ -1591,11 +1691,153 @@
 
 		<!-- FOOTER start  -->
 		<footer class="footer">
-			<div class="container">
-				<div class="footer__content">
-
+			<div class="footer__main">
+				<div class="container">
+					<div class="footer__header">
+						<div class="footer__header-left">
+							<div class="header__logo logo">
+								<img src="images/logo.png" alt="">
+							</div>
+							<div class="rating">
+								<div class="rating__logo">
+									<img src="images/logo-google.svg" alt="">
+								</div>
+								<div class="rating__text-block">
+									<p class="rating__title">Google Rating</p>
+									<div class="rating__row">
+										<p class="rating__amount">5.0</p>
+										<div class="rating__stars">
+											<div class="rating__star">
+												<img src="images/rating-star.svg" alt="">
+											</div>
+											<div class="rating__star">
+												<img src="images/rating-star.svg" alt="">
+											</div>
+											<div class="rating__star">
+												<img src="images/rating-star.svg" alt="">
+											</div>
+											<div class="rating__star">
+												<img src="images/rating-star.svg" alt="">
+											</div>
+											<div class="rating__star">
+												<img src="images/rating-star.svg" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer__header-right">
+							<div class="lang js-select">
+								<div class="lang__head js-select-head">
+									<div class="lang__flag">
+										<img src="images/flag-ua.svg" alt="">
+									</div>
+									<p class="lang__name h5">UA</p>
+									<span class="lang__triangle icon icon-triangle-left"></span>
+								</div>
+								<div class="lang__body js-select-body">
+									<div class="lang__item js-select-item">
+										<div class="lang__flag">
+											<img src="images/flag-ru.svg" alt="">
+										</div>
+										<p class="lang__name h5">RU</p>
+									</div>
+									<div class="lang__item js-select-item">
+										<div class="lang__flag">
+											<img src="images/flag-en.svg" alt="">
+										</div>
+										<p class="lang__name h5">EN</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer__info">
+						<ul class="footer__nav">
+							<li class="footer__item"><a href="#" class="footer__link">Вартість</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Види спорту</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Питання</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Відгуки</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Політика конфіденційності</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Договір оферта</a></li>
+						</ul>
+						<div class="footer__networks">
+							<ul class="footer__social">
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-inst"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-linkedin"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-twitter"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-facebook"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-telegram"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-whatsapp"></span></a></li>
+								<li class="footer__social-item"><a href="#" class="footer__social-link"><span
+											class="icon icon-viber"></span></a></li>
+							</ul>
+							<ul class="footer__payment">
+								<li class="footer__payment-item"><a href="#" class="footer__payment-link"><img
+											src="images/visa.png" alt=""></a></li>
+								<li class="footer__payment-item"><a href="#" class="footer__payment-link"><img
+											src="images/mastercard.png" alt=""></a></li>
+								<li class="footer__payment-item"><a href="#" class="footer__payment-link"><img
+											src="images/google-pay.png" alt=""></a></li>
+								<li class="footer__payment-item"><a href="#" class="footer__payment-link"><img
+											src="images/applepay.png" alt=""></a></li>
+							</ul>
+						</div>
+						<div class="footer__contact">
+							<div class="footer__contact-mob">
+								<p class="footer__contact-title">Контакти</p>
+								<div class="header__lang lang js-select d-none-desc">
+									<div class="lang__head js-select-head">
+										<div class="lang__flag">
+											<img src="images/flag-ua.svg" alt="">
+										</div>
+										<p class="lang__name h5">UA</p>
+										<span class="lang__triangle icon icon-triangle-left"></span>
+									</div>
+									<div class="lang__body js-select-body">
+										<div class="lang__item js-select-item">
+											<div class="lang__flag">
+												<img src="images/flag-ru.svg" alt="">
+											</div>
+											<p class="lang__name h5">RU</p>
+										</div>
+										<div class="lang__item js-select-item">
+											<div class="lang__flag">
+												<img src="images/flag-en.svg" alt="">
+											</div>
+											<p class="lang__name h5">EN</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="footer__contact-nav">
+								<li class="footer__contact-item h5"><a id="address" href="#"
+										class="footer__contact-link">Україна, м. Київ, 03150, вул. Ділова, 5, корпус 2, В1</a>
+								</li>
+								<li class="footer__contact-item h5"><a id="number" href="#" class="footer__contact-link">+38
+										(080) 030-51-22</a></li>
+								<li class="footer__contact-item h5"><a id="email" href="#"
+										class="footer__contact-link">info@ic-ekta.com</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="footer__bottom">
+				<div class="container">
+					<p class="footer__bottom-description h6">2021 © EKTA. Все права защищены</p>
+				</div>
+			</div>
+			<button class="btn-up">
+				<a class="icon icon-arrow-right" href="#top"></a>
+			</button>
 		</footer>
 		<!-- FOOTER end -->
 
@@ -1605,7 +1847,12 @@
 
 
 	<!-- SCRIPTS start  -->
-	<script src="js/main.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/daterangepicker.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
+	<!-- <script src="js/main.min.js"></script> -->
 
 
 
