@@ -79,28 +79,7 @@ $('.burger__bg,.burger__close,.burger__link').on('click', function () {
 //    // }
 // });
 
-var swiper = new Swiper(".swiper-pagin", {
-   spaceBetween: 32,
-   slidesPerView: 'auto',
-   // freeMode: true,
-   watchSlidesProgress: true,
-});
-var swiper2 = new Swiper(".banner-slider", {
-   spaceBetween: 10,
-   effect: "fade",
-   loop: true,
-   autoplay: {
-      delay: 1000,
-      disableOnInteraction: false,
-   },
-   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-   },
-   thumbs: {
-      swiper: swiper,
-   },
-});
+
 
 
 
@@ -466,4 +445,35 @@ $(document).ready(function () {
          click = true;
       })
    })
+
+   var swiper = new Swiper(".swiper-pagin", {
+      spaceBetween: 32,
+      slidesPerView: 'auto',
+      // simulateTouch: false, 
+      watchSlidesProgress: true,
+
+   });
+   var swiper2 = new Swiper(".banner-slider", {
+      spaceBetween: 10,
+      simulateTouch: false,
+      effect: "fade",
+      loop: true,
+      fadeEffect: {
+         crossFade: true,
+      },
+      autoplay: {
+         delay: 5000,
+         disableOnInteraction: false,
+      },
+      speed: 300,
+      navigation: {
+         nextEl: ".swiper-pagin__btn-next",
+      },
+      thumbs: {
+         swiper: swiper,
+      },
+      pagination: {
+         el: '.banner-slider__pagination',
+      },
+   });
 });
