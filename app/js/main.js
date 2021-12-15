@@ -50,7 +50,7 @@ $(document).ready(function () {
       $(this).closest('.hashtag__body').toggleClass('hashtag__body-open');
       $(this).closest('.hashtag__body').find('.hashtag__btn').toggleClass('off');
    })
-   if ($(window).width() > 768) {
+   if ($(window).width() >= 768) {
       $('.faq__body').append('<div class="faq__body-question faq__body-question--firstline"></div>');
       $('.faq__body').append('<div class="faq__body-content"></div>');
       $('.faq__body').append('<div class="faq__body-question faq__body-question--secondline"></div>');
@@ -111,6 +111,10 @@ $(document).ready(function () {
    }
    new Swiper('.review__slider', {
       loop: true,
+      pagination: {
+         el: '.review__pagination',
+         type: 'bullets',
+      },
       breakpoints: {
          991: {
             navigation: {
@@ -119,6 +123,15 @@ $(document).ready(function () {
             },
             slidesPerView: 3,
             spaceBetween: 15,
+         },
+         768: {
+            spaceBetween: 15,
+            slidesPerView: 2,
+         },
+         0: {
+            slidesPerView: 1.1,
+            spaceBetween: 10,
+            centeredSlides: true,
          }
       }
    })
