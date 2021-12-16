@@ -454,18 +454,17 @@ $(document).ready(function () {
 
    });
    var swiper2 = new Swiper(".banner-slider", {
-      spaceBetween: 10,
+      // spaceBetween: 10,
       simulateTouch: false,
-      effect: "fade",
       loop: true,
-      fadeEffect: {
-         crossFade: true,
-      },
+      // effect: "fade",
+      // fadeEffect: {
+      //    crossFade: true,
+      // },
       autoplay: {
          delay: 5000,
          disableOnInteraction: false,
       },
-      speed: 300,
       navigation: {
          nextEl: ".swiper-pagin__btn-next",
       },
