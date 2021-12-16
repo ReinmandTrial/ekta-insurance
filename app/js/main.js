@@ -177,53 +177,62 @@ $(document).ready(function () {
    })
    // Календарь
 
-   $('input[name="daterange"], .daterangepicker').on('focus', function () {
+   function calendar() {
+      $('input[name="daterange"], .daterangepicker').on('focus', function () {
 
-      $(this).daterangepicker({
-         opens: 'center',
-         "linkedCalendars": false,
-         "autoApply": true,
-         "parentEl": ".js-calendar",
-         "showCustomRangeLabel": false,
-         "singleDatePicker": true,
-         "locale": {
-            "format": "DD.MM.YYYY",
-            "separator": " до ",
-            "applyLabel": "Apply",
-            "cancelLabel": "Cancel",
-            "fromLabel": "From",
-            "toLabel": "To",
-            "customRangeLabel": "Custom",
-            "weekLabel": "W",
-            "daysOfWeek": [
-               "Пн",
-               "Вт",
-               "Ср",
-               "Чт",
-               "Пт",
-               "Сб",
-               "Нд"
-            ],
-            "monthNames": [
-               "Січень",
-               "Лютий",
-               "Березень",
-               "Квітень",
-               "Травень",
-               "Червень",
-               "Липень",
-               "Серпень",
-               "Вересень",
-               "Жовтень",
-               "Листопад",
-               "Грудень"
-            ],
-            "firstDay": 1
+         $(this).daterangepicker({
+            opens: 'center',
+            "linkedCalendars": false,
+            "autoApply": true,
+            "parentEl": $(this).closest('.js-calendar'),
+            "showCustomRangeLabel": false,
+            "singleDatePicker": true,
+            "locale": {
+               "format": "DD.MM.YYYY",
+               "separator": " до ",
+               "applyLabel": "Apply",
+               "cancelLabel": "Cancel",
+               "fromLabel": "From",
+               "toLabel": "To",
+               "customRangeLabel": "Custom",
+               "weekLabel": "W",
+               "daysOfWeek": [
+                  "Пн",
+                  "Вт",
+                  "Ср",
+                  "Чт",
+                  "Пт",
+                  "Сб",
+                  "Нд"
+               ],
+               "monthNames": [
+                  "Січень",
+                  "Лютий",
+                  "Березень",
+                  "Квітень",
+                  "Травень",
+                  "Червень",
+                  "Липень",
+                  "Серпень",
+                  "Вересень",
+                  "Жовтень",
+                  "Листопад",
+                  "Грудень"
+               ],
+               "firstDay": 1
+            },
+
+         }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
          },
-      }, function (start, end, label) {
-         console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            function () {
+               $('.daterangepicker').css('top', '0');
+            }
+         );
       });
-   });
+   }
+   calendar();
+
    // $('input[name="daterange"], .daterangepicker').on('focus', function () {
 
    //    $(this).daterangepicker({
@@ -330,7 +339,8 @@ $(document).ready(function () {
       $('.tourist-clone').clone().appendTo('.form-policy__tourist-block').removeClass('tourist-clone');
       $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function (index) {
          $(this).find('.form-policy__toutist-num').html('Участник ' + index);
-      })
+      });
+      calendar();
    })
    $('.form-policy__tourist-block').on('click', '.form-policy__btn-check', function () {
       let items = $(this).closest('.form-policy__tourist-block').find('.form-policy__tourist');
