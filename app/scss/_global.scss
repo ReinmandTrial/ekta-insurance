@@ -136,6 +136,7 @@ textarea {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
+		row-gap: 40px;
 		padding-left: 180px;
 		padding-top: 40px;
 		padding-bottom: 55px;
@@ -160,6 +161,7 @@ textarea {
 	.header__connection {
 		display: flex !important;
 		margin-right: 60px;
+		flex: none;
 		@media (max-width: 767.98px) {
 			margin-right: unset;
 		}
@@ -237,6 +239,14 @@ textarea {
 		font-size: 15px;
 		color: $blue;
 	}
+}
+
+.anchor {
+	opacity: 0;
+	pointer-events: none;
+	position: relative;
+	visibility: hidden;
+	top: -10vh;
 }
 
 .daterangepicker.show-calendar .drp-calendar.right {

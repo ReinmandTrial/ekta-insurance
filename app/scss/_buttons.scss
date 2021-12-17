@@ -14,7 +14,9 @@
         font-size: 15px;
         transform: rotate(180deg);
     }
-
+    @media (max-width: 575.98px) {
+        min-width: unset;
+    }
     &-primary {
         border-color: $blue;
         background: $blue;
