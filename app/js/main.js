@@ -435,4 +435,19 @@ $(document).ready(function () {
          el: '.banner-slider__pagination',
       },
    });
+
+   $(document).on('click', function () {
+      $('.input__block').each(function (i) {
+         var block = $(this);
+         var error = block.find('.input__error');
+         var title = block.find('.input__title');
+         if (error.width() > block.width() / 2 || title.width() > block.width() / 2 || block.width() < 300) {
+            error.addClass('input__error--bottom');
+         } else {
+            error.removeClass('input__error--bottom');
+         }
+      })
+
+   })
 });
+
