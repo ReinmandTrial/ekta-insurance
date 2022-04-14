@@ -79,28 +79,29 @@ $('.burger__bg,.burger__close,.burger__link').on('click', function () {
 //    // }
 // });
 
-var swiper = new Swiper(".swiper-pagin", {
-   spaceBetween: 32,
-   slidesPerView: 'auto',
-   // freeMode: true,
-   watchSlidesProgress: true,
-});
-var swiper2 = new Swiper(".banner-slider", {
-   spaceBetween: 10,
-   effect: "fade",
-   loop: true,
-   autoplay: {
-      delay: 1000,
-      disableOnInteraction: false,
-   },
-   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-   },
-   thumbs: {
-      swiper: swiper,
-   },
-});
+   const swiper = new Swiper(".swiper-pagin", {
+      spaceBetween: 32,
+      slidesPerView: 'auto',
+      // freeMode: true,
+      watchSlidesProgress: true,
+   });
+   const swiper2 = new Swiper(".banner-slider", {
+      spaceBetween: 10,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+         delay: 1000,
+         disableOnInteraction: false,
+      },
+      navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+         swiper: swiper,
+      },
+   });
+
 
 
 
@@ -245,7 +246,7 @@ $(document).ready(function () {
          console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
       });
    });
-   // $('input[name="daterange"], .daterangepicker').on('focus', function () {
+   // $('input[name="daterange"], .daterangepicker1').on('focus', function () {
 
    //    $(this).daterangepicker({
    //       opens: 'left',
@@ -337,22 +338,43 @@ $(document).ready(function () {
       $(this).closest('.select').find('.select__text').html(text);
       $(this).closest('.select__block').removeClass('open');
    })
-
+   let userArray = new Array();
    $('.form-policy__btn-add-tourist').on('click', function () {
-      $('.form-policy__tourist-block').addClass('new');
-      $('.form-policy__header').css('border-bottom', 'none');
-      $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function () {
-         if (!$(this).hasClass('tourist-clone')) {
-            $(this).addClass('ready');
-         }
-      })
+      let fName,sName,phone,poshta,pasword,birthDate;
+      fName = $('.form-policy__tourist').find('input[fName]').value;
+      sName = $('.form-policy__tourist').find('input[sName]').value;
+      phone = $('.form-policy__tourist').find('input[phone]').value;
+      poshta = $('.form-policy__tourist').find('input[poshta]').value;
+      pasword = $('.form-policy__tourist').find('input[pasword]').value;
+      birthDate = $('.form-policy__tourist').find('input[birthDate]').value;
+      let user = {
+         ufName: fName,
+         usName: sName,
+         uphone: phone,
+         uposhta: poshta,
+         upasword: pasword,
+         ubirthDate: birthDate
+      }
+      userArray.push(user);
+      console.log(userArray);
+   //    $('.form-policy__tourist-block').addClass('new');
+   //    $('.form-policy__header').css('border-bottom', 'none');
+   //    $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function () {
+   //       if (!$(this).hasClass('tourist-clone')) {
+   //          $(this).addClass('ready');
+   //       }
+   //    })
 
 
-      $('.tourist-clone').clone().appendTo('.form-policy__tourist-block').removeClass('tourist-clone');
-      $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function (index) {
-         $(this).find('.form-policy__toutist-num').html('Участник ' + index);
-      })
+   //    $('.tourist-clone').clone().appendTo('.form-policy__tourist-block').removeClass('tourist-clone');
+   //    $($('.form-policy__tourist-block').find('.form-policy__tourist')).each(function (index) {
+   //       $(this).find('.form-policy__toutist-num').html('Участник ' + index);
+   //    })
+
    })
+
+
+
    $('.form-policy__tourist-block').on('click', '.form-policy__btn-check', function () {
       let items = $(this).closest('.form-policy__tourist-block').find('.form-policy__tourist');
 
